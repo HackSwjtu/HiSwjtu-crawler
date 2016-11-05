@@ -1,0 +1,11 @@
+INSERT INTO swjtu.xinxi (fileName, fileType, filesize, date, url) VALUES ('课程临时变动申请表.doc', '0', '0', '2016-09-19 00:00:00', 'http://sist.swjtu.edu.cn:80//attached/files/201609191713482121895892052.doc');
+INSERT INTO swjtu.xinxi (fileName, fileType, filesize, date, url) VALUES ('本科毕业设计论文模板.doc', '0', '0', '2015-11-24 00:00:00', 'http://sist.swjtu.edu.cn:80//attached/files/2015112409001398664976391.doc');
+INSERT INTO swjtu.xinxi (fileName, fileType, filesize, date, url) VALUES ('往届毕业设计题目.xls', '0', '0', '2015-11-09 00:00:00', 'http://sist.swjtu.edu.cn:80//attached/files/2016110311015850663006033.xls');
+INSERT INTO swjtu.xinxi (fileName, fileType, filesize, date, url) VALUES ('本科校外毕业设计申请表.rar', '0', '0', '2015-04-01 00:00:00', 'http://sist.swjtu.edu.cn:80//attached/files/201504011411591112132135444.rar');
+INSERT INTO swjtu.xinxi (fileName, fileType, filesize, date, url) VALUES ('导师职责总责及记录表.doc', '0', '0', '2015-01-20 00:00:00', 'http://sist.swjtu.edu.cn:80//attached/files/201501200951577161742930217.doc');
+INSERT INTO swjtu.xinxi (fileName, fileType, filesize, date, url) VALUES ('西南交通大学课堂教学质量检查套表.doc', '0', '0', '2015-01-20 00:00:00', 'http://sist.swjtu.edu.cn:80//attached/files/201501200951104611703831713.doc');
+INSERT INTO swjtu.xinxi (fileName, fileType, filesize, date, url) VALUES ('本科毕业设计(论文)撰写规范（2014修订）.doc', '0', '0', '2014-11-20 00:00:00', 'http://sist.swjtu.edu.cn:80//attached/files/20141120090708628836800592.doc');
+INSERT INTO swjtu.xinxi (fileName, fileType, filesize, date, url) VALUES ('本科毕业设计任务书.doc', '0', '0', '2014-11-20 00:00:00', 'http://sist.swjtu.edu.cn:80//attached/files/201411200904567061852968993.doc');
+INSERT INTO swjtu.xinxi (fileName, fileType, filesize, date, url) VALUES ('本科毕业设计开题报告模板.doc', '0', '0', '2014-11-20 00:00:00', 'http://sist.swjtu.edu.cn:80//attached/files/201411200904282022136192886.doc');
+INSERT INTO swjtu.xinxi (fileName, fileType, filesize, date, url) VALUES ('2014年人才培养工作会校长报告V2_1.docx', '0', '0', '2014-03-24 00:00:00', 'http://sist.swjtu.edu.cn:80//attached/files/20140324151739289730673872.docx');
+INSERT INTO swjtu.xinxi (fileName, fileType, filesize, date, url) VALUES ('2014级人才培养方案（英文版）.docx', '0', '0', '2014-03-24 00:00:00', 'http://sist.swjtu.edu.cn:80//attached/files/201403241516246901967758374.docx');

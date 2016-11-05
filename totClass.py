@@ -1,4 +1,5 @@
 import time
+from SIST.sist_file_script import crawler
 
 class File:
     fileName = ''
@@ -25,4 +26,8 @@ class File:
         print ('Count: ' + str(self.downCnt))
         print ('URL: ' + self.url)
 
-
+    #for xinxi files
+    def xinxiCrawler(self):
+        xinxi = crawler()
+        fileXinxi = xinxi.craw()
+        return fileXinxi

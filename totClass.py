@@ -1,5 +1,13 @@
 import time
 from SIST.sist_file_script import crawler
+import sys
+
+defaultencoding = 'utf-8'
+
+if sys.getdefaultencoding() != defaultencoding:
+    reload(sys)
+    sys.setdefaultencoding(defaultencoding)
+
 
 class File:
     fileName = ''
@@ -18,13 +26,14 @@ class File:
         self.url = url
 
     def __str__(self):
-        print ('Name: ' + self.fileName)
+        res = 'Name: ' + self.fileName + '\n'
         if len(self.fileType) > 0:
-            print ('Type: ' + self.fileType)
-        print ('Size: ' + str(self.fileSize))
-        print ('Date: ' + str(self.date))
-        print ('Count: ' + str(self.downCnt))
-        print ('URL: ' + self.url)
+            res = res + 'Type: ' + self.fileType + '\n'
+        res += 'Size: ' + str(self.fileSize) + '\n'
+        res += 'Date: ' + str(self.date) + '\n'
+        res += 'Count: ' + str(self.downCnt) + '\n'
+        res += 'URL: ' + str(self.url) + '\n'
+        return  res
 
     #for xinxi files
     def xinxiCrawler(self):

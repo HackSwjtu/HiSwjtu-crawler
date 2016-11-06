@@ -91,8 +91,6 @@ class gs(object):
                     }
                 )
 
-
-
         # 保存到数据库, gs表列为 file_id, fileName, fileType, fileSize, date. url
         # 数据插入
         sql = 'INSERT gs VALUES(DEFAULT, %s, %s, 0, %s, %s)'

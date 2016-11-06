@@ -60,7 +60,6 @@ class gs(object):
 
         #  遍历每页文件列表，并保存到数据库
         #  :param max_page: 最大页数
-        #  :param save: save函数，保存到数据库
         #  :return: 文件信息列表，元素为字典
 
         data = self.data
@@ -93,7 +92,6 @@ class gs(object):
                 )
 
         # 保存到数据库, gs表列为 file_id, fileName, fileType, fileSize, date. url
-
         # 数据插入
         sql = 'INSERT gs VALUES(DEFAULT, %s, %s, 0, %s, %s)'
         for one in file:

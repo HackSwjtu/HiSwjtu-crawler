@@ -34,12 +34,12 @@ class gs(object):
         # 从数据库中获取已爬取文件列表, 回调 get_page
         #  :return: 已爬取文件url集合
 
-        sql = "SELECT url FROM gs;"
-        self.cur.execute(sql)
-        url_list = self.cur.fetchall()
-        self.conn.commit()
-        for url in url_list:
-            self.exist_file_set.add(url[0])
+        # sql = "SELECT url FROM gs;"
+        # self.cur.execute(sql)
+        # url_list = self.cur.fetchall()
+        # self.conn.commit()
+        # for url in url_list:
+        #    self.exist_file_set.add(url[0])
 
         return get_page(self.get_file)
 
@@ -74,8 +74,8 @@ class gs(object):
             for one in res.find_all('div', {'class': 'down_list'}):
                 url = 'http://gs.swjtu.edu.cn' + one.find('a', {'target': '_blank'}).attrs['href']
                 # 文件查重
-                if url in self.exist_file_set:
-                    continue
+                # if url in self.exist_file_set:
+                #    continue
                 title = one.find('div', {'class': 'title'}).text
                 info_div = one.find('div', {'class': 'remark'})
                 file_type = info_div.span.text
@@ -90,39 +90,34 @@ class gs(object):
                         'dnt': dnt
                     }
                 )
+        return file
 
         # 保存到数据库, gs表列为 file_id, fileName, fileType, fileSize, date. url
         # 数据插入
-        sql = 'INSERT gs VALUES(DEFAULT, %s, %s, 0, %s, %s)'
-        for one in file:
-            self.cur.execute(sql, (one['title'], one['type'], one['time'], one['url']))
-            self.conn.commit()
-        print('新增%s条记录' % len(file))
+        # sql = 'INSERT gs VALUES(DEFAULT, %s, %s, 0, %s, %s)'
+        # for one in file:
+        #    self.cur.execute(sql, (one['title'], one['type'], one['time'], one['url']))
+        #    self.conn.commit()
+        # print('新增%s条记录' % len(file))
 
     def start(self):
 
         # 数据库连接
-        self.conn = pymysql.connect(**self.db_info)
-        self.cur = self.conn.cursor()
+        # self.conn = pymysql.connect(**self.db_info)
+        # self.cur = self.conn.cursor()
         try:
-            sql = '''CREATE TABLE IF NOT EXISTS `gs` (
-      `file_id` int(11) NOT NULL AUTO_INCREMENT,
-      `fileName` varchar(100) NOT NULL,
-      `fileType` varchar(50) DEFAULT NULL,
-      `fileSize` varchar(30) DEFAULT NULL,
-      `date` datetime DEFAULT NULL,
-      `url` varchar(80) DEFAULT NULL,
-      PRIMARY KEY (`file_id`),
-      UNIQUE KEY `url_UNIQUE` (`url`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=utf8;'''
-            self.cur.execute(sql)
-            self.conn.commit()
+            # self.cur.execute(sql)
+            # self.conn.commit()
             # 开始爬取
-            self.get_exist_file(self.get_page)
+            file = self.get_exist_file(self.get_page)
+            for one in file:
+                print(one.items())
+            print('研究生院共%s个文件' % len(file))
         finally:
             # 连接关闭
-            self.cur.close()
-            self.conn.close()
+            # self.cur.close()
+            # self.conn.close()
+            pass
 
 if __name__ == '__main__':
     # 数据库信息

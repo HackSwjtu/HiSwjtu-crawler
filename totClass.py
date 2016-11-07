@@ -1,5 +1,5 @@
 import time
-from SIST.sist_file_script import crawler
+# from SIST.sist_file_script import crawler
 import sys
 
 defaultencoding = 'utf-8'
@@ -26,6 +26,16 @@ class File:
         self.url = url
 
     def __str__(self):
+        res = 'Name: ' + self.fileName + '\n'
+        if len(self.fileType) > 0:
+            res = res + 'Type: ' + self.fileType + '\n'
+        res += 'Size: ' + str(self.fileSize) + '\n'
+        res += 'Date: ' + str(self.date) + '\n'
+        res += 'Count: ' + str(self.downCnt) + '\n'
+        res += 'URL: ' + str(self.url) + '\n'
+        return  res
+
+    def __repr__(self):
         res = 'Name: ' + self.fileName + '\n'
         if len(self.fileType) > 0:
             res = res + 'Type: ' + self.fileType + '\n'

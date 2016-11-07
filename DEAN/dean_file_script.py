@@ -4,6 +4,8 @@ import re
 from bs4 import BeautifulSoup
 import totClass
 
+
+
 data = []
 
 def checkTheMaxPage():
@@ -26,6 +28,7 @@ def crawler(maxPage):
 
         req = urllib.request.urlopen('http://dean.swjtu.edu.cn/servlet/WebFileAction?Action=FileMore&kw=&page=' + str(i))
 
+        f = open('file.data', 'w')
 
         html = req.read()
         soup = BeautifulSoup(html, 'html.parser')
@@ -48,9 +51,14 @@ def crawler(maxPage):
             data.append(file_obj)
 
     for _ in data:
-        print (_)
+        strx = repr(_)
+        print (strx)
+
 
     print('一共 ', str(len(data)), ' 条数据')
+    f.close()
+
+
 
 
 if __name__ == "__main__":
